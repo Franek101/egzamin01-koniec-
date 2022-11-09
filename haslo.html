@@ -1,0 +1,90 @@
+<html>
+
+    
+    
+    
+    <head lang="pl">
+        <meta charset="utf-8">
+     <title>
+        Miernik jakości hasła
+        </title>   
+    <link type="text/css" rel="stylesheet" href="styl.css">
+        <script >
+        function funkcja()
+{
+let haslo="";
+haslo = document.getElementById("maslo").value;
+let wzorzec=/\d/;
+    let dlugosc = 0;
+dlugosc = haslo.length;
+if((wzorzec.test(haslo)==true)&&(dlugosc>=7))
+    {
+    document.getElementById("nazwa").innerHTML = '<span style="color:green;">DOBRE</span>';
+    }
+    else if((wzorzec.test(haslo)==true)&&((dlugosc>4)&&(dlugosc<=6)))
+            {
+            document.getElementById("nazwa").innerHTML = '<span style="color:darkblue;">SREDNIE</span>';
+            }
+    else if(haslo=="")
+        {
+            document.getElementById("nazwa").innerHTML = '<span style="color:red;">WPISZ HASŁO</span>';
+        }
+    else
+        {
+            document.getElementById("nazwa").innerHTML = '<span style="color:burlywood;">SŁABE</span>';
+        }
+    
+    
+}</script> 
+    </head>
+    
+<body>
+    
+    <nav>
+       <h1>
+        <a href="index.html" id="link" >SPRAWDŹ SWOJE HASŁO</a>
+        </h1>
+        
+        
+    </nav>
+    
+   <div class="lewy">
+        Wybierz
+        <ol>
+        <li>
+            <a href="haslo.html" id="link">  Sprawdź hasło  </a>
+            </li>
+        <li>
+            <a href="zasady.html"  id="link">
+            
+            Zasady tworzenia haseł</a>
+            </li>
+        </ol>
+    </div>
+        
+     <div class="prawy">
+         <br><br>
+    Twoje Haslo
+    <input type="password" id="maslo">
+    <input type="button" value="Sprawdź" onclick="funkcja()">
+    <div id="nazwa">
+         
+         </div>
+    
+         
+    </div>
+    
+    <footer>
+   <p>Miernik jakosci hasla
+        <br><br>
+    Strone opracował Jakub Frąckiewicz®</p> 
+    </footer>
+    
+    
+    
+    
+    
+    
+    
+    </body>
+
